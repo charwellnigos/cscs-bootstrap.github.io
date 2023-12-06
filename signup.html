@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in your account</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="shortcut icon" href="cscslogo.png" type="image/x-icon">
-
 </head>
 <body>
 
       <!--Header-->
       <div class="container">
-      <header class="d-flex justify-content-center py-3" style="background-color: #bbe7f5;">
-        <ul class="nav nav-pills ms-auto"> <!-- Use ms-auto to move the "Home" button to the right -->
-            <li class="nav-item" style="margin-right: 20px;"> <!-- Adjust the margin as needed -->
-                <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-            </li>
-        </ul>
-    </header>
-  </div>
+        <header class="d-flex justify-content-center py-3" style="background-color: #bbe7f5;">
+          <ul class="nav nav-pills ms-auto"> <!-- Use ms-auto to move the "Home" button to the right -->
+              <li class="nav-item" style="margin-right: 20px;"> <!-- Adjust the margin as needed -->
+                  <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+              </li>
+          </ul>
+      </header>
+    </div>
+
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
           <div class="col-lg-7 text-center text-lg-start">
@@ -29,6 +29,10 @@
           <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
                 <p>Please use your institutional email.</p> <br>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="">
+                    <label for="floatingInput">Name</label>
+                  </div>
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
@@ -42,10 +46,9 @@
                   <input type="checkbox" value="remember-me"> Remember me
                 </label>
               </div>
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button> <br>
-              <a href="forgetpass.html" style="text-align: center;">Forgot password</a>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Create account</button> <br>
+              Back to <a href="login.html">Log in</a>
               <hr class="my-4">
-              <p>No account yet? <a href="signup.html">Sign up</a></p>
               <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Pangasinan State University</span>
             </form>
           </div>

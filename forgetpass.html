@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="cscslogo.png" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: aliceblue;
+        }
+
+        header {
+            background-color: #bbe7f5;
+            text-align: center;
+            padding: 10px;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <main class="form-signin">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Reset Password</h1>
+        
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+        
+                <div class="form-check text-start my-3">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    Back to <a href="login.html">Log in</a>
+                    </label>
+                </div>
+                <button class="btn btn-primary w-100 py-2" type="submit">Send OTP</button> <br>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Pangasinan State University</span>
+            </form>
+        </main>
+    </div>
+
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
