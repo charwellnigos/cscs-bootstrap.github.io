@@ -42,7 +42,7 @@
                 <label for="floatingInput">Email address</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="pass" placeholder="Password">
                 <label for="floatingPassword">Password</label>
               </div>
               <div class="checkbox mb-3">
@@ -50,7 +50,7 @@
                   <input type="checkbox" value="remember-me"> Remember me
                 </label>
               </div>
-              <button class="w-100 btn btn-lg btn-primary" type="button" onclick="checkLogin()">Log in</button> <br>
+              <button class="w-100 btn btn-lg btn-primary" onclick="checkLogin()">Log in</button> <br>
               <a href="forgetpass.html" style="text-align: center;">Forgot password</a>
               <hr class="my-4">
               <p>No account yet? <a href="signup.html">Sign up</a></p>
@@ -60,9 +60,6 @@
         </div>
       </div>
 
-
-      document.getElementById("email");
-      var passwordInput = document.getElementById("pass");
 
       <script>
         function checkLogin() {
