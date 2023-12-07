@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Center for Statistics and Computer Sciences</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="shortcut icon" href="cscslogo.png" type="image/x-icon">
 
     <style>
@@ -29,28 +30,49 @@
     }
 
     .contact img {
-      width: 24px; /* Adjust the size as needed */
-      height: 24px; /* Adjust the size as needed */
+      width: 24px; 
+      height: 24px; 
       margin: 0 10px;
+
+  
+      .brand-text {
+      font-size: 1.5rem; /* Adjust the font size as needed */
+    }
+
+    @media (max-width: 100.98px) {
+      .brand-text {
+        font-size: 1.2rem; /* Adjust the font size for small screens */
+      }
+    }
+ 
     
   </style>
 </head>
 <body>
   <!--Header-->
   <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color: #bbe7f5;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#index.html"></use></svg>
-            <span class="fs-3"><img src="cscslogo.png" alt="" height="50" width="50"> Center for Statistics and Computer Sciences</span>
+    <header class="navbar navbar-expand-md navbar-light fixed-top py-3" style="background-color: #bbe7f5;">
+      <div class="container">
+        <a href="/" class="navbar-brand d-flex align-items-center link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#index.html"></use></svg>
+          <span class="fs-3 brand-text"><img src="cscslogo.png" alt="" height="70" width="70"> </span>
         </a>
-
-      <ul class="nav nav-pills">
-        <a href="login.html"><button type="button" class="btn btn-outline-secondary">Login</button></a>
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#aboutus" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="#contactus" class="nav-link">Contact Us</a></li>
-      </ul>
-    </header> <hr>
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="login.html" class="btn btn-outline-secondary">Login</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#aboutus" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="#contactus" class="nav-link">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <hr>
   </div>
 
   <!--Hero-->
@@ -60,7 +82,7 @@
         <img src="stat.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" ><p style="color: #6979e2; font-size: 650; ">Statistics Analysis, because facts matter!</p></h1> <br>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" ><p style="color: #2b3cad; font-size: 650; ">Center for Statistics and Computer Sciences</p></h1> <br>
        
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <button type="button" class="btn btn-outline-dark"><a href="consultation.html" style="text-decoration: none; color: black;"">Request a Consultation</a></button>
