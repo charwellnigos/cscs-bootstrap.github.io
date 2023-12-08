@@ -44,14 +44,58 @@
             padding: 15px;
             margin-bottom: 15px;
         }
+        #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #popup {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #close-btn {
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+    }
+    #close-btn:active {
+      color: black;
+    }
+   
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+
+
+
     </style>
 </head>
 <body>
 
 
 
-    <form action="#" method="post">
-        <fieldset>
+    <form action="#" method="post" >
+        <fieldset style="background-color: aliceblue;">
             <b>FINAL CLEARANCE</b><br> <br>
 
              Date: <input type="datetime" name="" id="">
@@ -80,7 +124,7 @@
             <input type="text" id="consultedStatistician" name="consultedStatistician" required>
         </fieldset>
 
-        <fieldset>
+        <fieldset style="background-color: aliceblue;">
             <legend>B. AVAILED SERVICES (to be filled out by the Center)</legend>
             <input type="checkbox" name="" id=""> <b>Data Encoding/Cleaning</b> <br>
             <input type="checkbox" name="" id=""> <b>Data Analysis</b> <br>
@@ -90,9 +134,8 @@
             <input type="checkbox" name="" id=""> <b>Output Checking</b>
         </fieldset>
 
-        <fieldset>
+        <fieldset style="background-color: aliceblue;">
             <legend>B. FINAL CONSULTATION (to be filled out by the Center)</legend>
-            <!-- Include checkboxes for Final Consultation -->
             <input type="checkbox" name="" id=""> Submitted the instrument and/or copy of the data to the center for verification <br>
             <input type="checkbox" name="" id=""> Appropriate table format for all statistical analysis <br>
             <input type="checkbox" name="" id=""> Appropriate graph format for all statistical analysis <br>
@@ -104,9 +147,8 @@
             <textarea name="" id="" cols="30" rows="10"></textarea>
         </fieldset>
 
-        <fieldset>
+        <fieldset style="background-color: aliceblue;">
             <legend>C. ASSESSMENT/PAYMENT</legend>
-            <!-- Include input fields for Assessment/Payment -->
             officialReceiptNo: <input type="number" name="" id=""> <br>
             Date: <input type="date" name="" id=""> <br><br>
             <b><u>ASSESSMENT AND FEES</u></b> <br>
@@ -119,7 +161,7 @@
 
         </fieldset>
 
-        <fieldset>
+        <fieldset style="background-color: aliceblue;">
             <legend>D. CLEARANCE</legend>
             <p>To whom it may concern:</p>
             <p>This is to certify that <input type="text"> has satisfactorily accounted for all the fees and has completed the requirements set by the Center for the FINAL STAGE.</p>
@@ -129,15 +171,36 @@
 
             
             <b>Center Head/Director</b>
-            <input type="text" id="centerHeadSignature" name="centerHeadSignature" required>
-        </fieldset>
-        <br><br><br>
-        <b>Assessed by:</b>
+            <input type="text" id="centerHeadSignature" name="centerHeadSignature" required> <br>
+            <b>Assessed by:</b>
         <input type="text">
 
-        <input type="submit" value="Submit">
+        <button onclick="showPopup()" >Submit Request</button>
         <p>Back to <a href="index.html">home</a>.</p>
+        </fieldset>
+        <br><br><br>
     </form>
+    <div id="overlay">
+        <div id="popup" style="background-color: white;">
+          <span id="close-btn" onclick="closePopup()">Close</span>
+          <p><h5>You have requested a final clearance. Please wait for further announcement. Thank you!</h5></p> <br>
+          <p>Go back to <a href="index.html">Home</a></p>
+        </div>  
+      </div>
 
+
+ <script>
+        function validateForm() {
+            // You can add more custom validation if needed
+            return true;
+        }
+        function showPopup() {
+    document.getElementById('overlay').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+    </script>
 </body>
 </html>
