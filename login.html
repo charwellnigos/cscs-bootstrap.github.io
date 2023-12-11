@@ -63,19 +63,19 @@
 
       <script>
         function checkLogin() {
-        // Get the input elements by their IDs
+       
         var emailInput = document.getElementById("email");
         var passwordInput = document.getElementById("pass");
                               
-        // Get the values of the inputs
+      
         var emailValue = emailInput.value;
         var passwordValue = passwordInput.value;
                               
-        // Check if email and password match the expected values
+       
         if (emailValue === "admin" && passwordValue === "1234") {
         alert("Login successful!");
         window.location.href = "admin.html";
-        // You can redirect to another page or perform other actions here
+       
         }
         else if (emailValue === "student" && passwordValue === "5678") {
         alert("Login successful!");

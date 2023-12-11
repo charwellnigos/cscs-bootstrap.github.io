@@ -36,12 +36,12 @@
 
   
       .brand-text {
-      font-size: 1.5rem; /* Adjust the font size as needed */
+      font-size: 1.5rem; 
     }
 
     @media (max-width: 100.98px) {
       .brand-text {
-        font-size: 1.2rem; /* Adjust the font size for small screens */
+        font-size: 1.2rem; 
       }
     }
    
@@ -86,7 +86,7 @@
 }
 
 .modal-container {
-    max-width: 600px; /* Adjust as needed */
+    max-width: 600px;
     width: 100%;
     background-color: #fff;
     padding: 20px;
@@ -347,31 +347,31 @@
 
 <script>
   
-// Add this to scripts.js
+
 const contactButton = document.getElementById("contactButton");
 const contactModal = document.getElementById("contactModal");
 
-// Show the modal
+
 contactButton.addEventListener("click", openModal);
 
-// Hide the modal
+
 function closeModal() {
     contactModal.style.display = "none";
 }
 
-// Show the modal
+
 function openModal() {
     contactModal.style.display = "block";
 }
 
-// Close the modal if the user clicks outside of it
+
 window.addEventListener("click", function(event) {
     if (event.target === contactModal) {
         closeModal();
     }
 });
 
-// Close the modal if the user presses the Esc key
+
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         closeModal();
