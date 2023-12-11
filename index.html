@@ -44,7 +44,7 @@
         font-size: 1.2rem; /* Adjust the font size for small screens */
       }
     }
-    /* Add this to styles.css */
+   
 .modal {
     display: none;
     position: fixed;
@@ -75,7 +75,7 @@
     text-decoration: none;
     cursor: pointer;
 }
-/* Add this to styles.css */
+
 .modal {
     position: fixed;
     top: 0;
@@ -93,6 +93,9 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
+
 
 
 
@@ -124,48 +127,26 @@
             <li class="nav-item"><a href="#contactModal" class="nav-link" id="contactButton">Contact Us</a></li>
           </ul>
           <div id="contactModal" class="modal">
-            <div class="modal-container">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content rounded-4 shadow">
-                        <div class="modal-body p-5">
-                            <h2 class="fw-bold mb-0">Contact us:</h2>
-                            <ul class="d-grid gap-4 my-5 list-unstyled small">
-                                <li class="d-flex gap-4">
-                                    <svg class="bi text-body-secondary flex-shrink-0" width="48" height="48">
-                                        <use xlink:href="#grid-fill"></use>
-                                    </svg>
-                                    <div>
-                                      <div class="contact">
-                                        <a id="contactus"></a>
-                                        <a href="tel:+"><img src="call.png" alt="" class="call"></a>
-                                        <a href="mailto:charwellnigos3@gmail.com"><img src="email.png" alt="" class="email"></a>
-                                        <a href="http://"><img src="linkedin.png" alt="" class="linkedin"></a>
-                                      </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex gap-4">
-                                    <svg class="bi text-warning flex-shrink-0" width="48" height="48">
-                                        <use xlink:href="#bookmark-star"></use>
-                                    </svg>
-                                    <div>
-                                        <h5 class="mb-0">Bookmarks</h5>
-                                        Save items you love for easy access later.
-                                    </div>
-                                </li>
-                                <li class="d-flex gap-4">
-                                    <svg class="bi text-primary flex-shrink-0" width="48" height="48">
-                                        <use xlink:href="#film"></use>
-                                    </svg>
-                                    <div>
-                                        <h5 class="mb-0">Video embeds</h5>
-                                        Share videos wherever you go.
-                                    </div>
-                                </li>
-                            </ul>
-                            <button type="button" id="closeBtn" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Great, thanks!</button>
-
+            <div class="modal-dialog text-center">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header">
+                        <h3 class="fw-bold mb-0">Contact us:</h3> <br>
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="contact text-center">
+                                    <a id="contactus"></a>
+                                    <a href="tel:+"><img src="call.png" alt="" class="call"</a> 
+                                    <a href="mailto:charwellnigos3@gmail.com"><img src="email.png" alt="" class="email"></a> 
+                                    <a href="https://www.linkedin.com/in/charwell-nigos-945503258/"><img src="linkedin.png" alt="" class="linkedin"></a>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-body p-5">
+                        Kindly send us your questions or messages regarding our services in the following icons above. Thank you.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
                     </div>
                 </div>
             </div>
@@ -262,8 +243,17 @@
                 <a href="process.html">
                   <img src="diagram.png" alt="" class="img-fluid">
                 </a>
+                
               </div>
             </div>
+            <div class="text-center">
+              <button class="btn btn-primary px-5 mb-5" type="button" href="process.html">
+                <a href="process.html" style="color: white; text-decoration: none;">Learn More</a>
+
+
+              </button>
+          </div>
+          
           </div> <br><br><br>
 
           <!--Statisticians-->
