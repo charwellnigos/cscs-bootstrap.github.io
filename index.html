@@ -121,7 +121,7 @@
   
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a href="login.html" class="btn btn-outline-secondary">Login</a></li>
+            
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#aboutus" class="nav-link">About Us</a></li>
             <li class="nav-item"><a href="#contactModal" class="nav-link" id="contactButton">Contact Us</a></li>
@@ -169,10 +169,38 @@
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" ><p style="color: #2b3cad; font-size: 650; ">Statistics analysis, because facts matter!</p></h1> <br>
        
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-outline-secondary"><a href="login.html" style="text-decoration: none; color: black;"">Get Started</a></button>
-          
-          
-        </div>
+          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#getStartedModal">
+              Get Started
+          </button>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="getStartedModal" tabindex="-1" aria-labelledby="getStartedModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="getStartedModalLabel">Center for Statistics and Computer Sciences</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <!-- Add your modal content here -->
+                      
+                      <p>The Center serves as: <br> 
+                        <ul>
+                          <li>Place for statistical consultation in the formulation statistical plans
+                            and study design.</li>
+                          <li>Place for data management analysis.</li>
+                          <li>Venue for seminars, workshops, conferences, symposiums and tutorials to target clients.</li>
+                          <li>Hub for all researchers in the field of mathematics, statistics, and computing sciences.</li>
+                        </ul>
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn-secondary" data-bs-dismiss="modal"><a href="login.html" style="text-decoration: none; color: white;">Login</a></button>
+                  </div>
+              </div>
+          </div>
+      </div>
       </div>
     </div>
   </div>
