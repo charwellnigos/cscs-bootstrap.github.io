@@ -91,66 +91,67 @@
     </style>
 </head>
 <body>
-    
-    <form action="#" method="post">
-        <fieldset style="background-color: aliceblue;">
-            <header><b>CLEARANCE FOR THE CONDUCT OF RESEARCH</b><br><br>
-                Date: <input type="datetime" name="" id=""></header> <br><br>
-            <legend>A. DESCRIPTION</legend>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+  <form action="#" method="post" onsubmit="return validateForm()">
+    <fieldset style="background-color: aliceblue;">
+      <header><b>CLEARANCE FOR THE CONDUCT OF RESEARCH</b><br><br>
+          Date: <input type="datetime" name="date" id="date"></header> <br><br>
+      <legend>A. DESCRIPTION</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-            <label for="course">Course/Major:</label>
-            <input type="text" id="course" name="course" required>
+      <label for="course">Course/Major:</label>
+      <input type="text" id="course" name="course" required>
 
-            <label for="campus">Campus:</label>
-            <input type="text" id="campus" name="campus" required>
+      <label for="campus">Campus:</label>
+      <input type="text" id="campus" name="campus" required>
 
-            <label for="semester">Semester:</label>
-            <input type="text" id="semester" name="semester" required>
+      <label for="semester">Semester:</label>
+      <input type="text" id="semester" name="semester" required>
 
-            <label for="academicYear">S.Y.:</label>
-            <input type="text" id="academicYear" name="academicYear" required>
+      <label for="academicYear">S.Y.:</label>
+      <input type="text" id="academicYear" name="academicYear" required>
 
-            <label for="thesisTitle">Title of Thesis/Dissertation:</label>
-            <textarea id="thesisTitle" name="thesisTitle" required></textarea>
+      <label for="thesisTitle">Title of Thesis/Dissertation:</label>
+      <textarea id="thesisTitle" name="thesisTitle" required></textarea>
 
-            <label for="adviser">Adviser:</label>
-            <input type="text" id="adviser" name="adviser" required>
+      <label for="adviser">Adviser:</label>
+      <input type="text" id="adviser" name="adviser" required>
 
-            <label for="consultedStatistician">Consulted Statistician from the Center:</label>
-            <input type="text" id="consultedStatistician" name="consultedStatistician" required>
-        </fieldset>
+      <label for="consultedStatistician">Consulted Statistician from the Center:</label>
+      <input type="text" id="consultedStatistician" name="consultedStatistician" required>
+    </fieldset>
 
-        <fieldset style="background-color: aliceblue;">
-            <legend>B. RESEARCH STAGES (to be filled out by the Center)</legend>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="TitleDefense"> Title Defense</label>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="ProposalDefense"> Proposal Defense</label>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringValidation"> Validation of Instrument</label>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringPilotTesting"> Pilot Testing</label>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringTargetSamples"> Data Gathering to Target Samples</label>
-            <label class="checkbox-label"><input type="checkbox" name="researchStage" value="FinalDefense"> Final Defense</label>
+    <fieldset style="background-color: aliceblue;">
+      <legend>B. RESEARCH STAGES (to be filled out by the Center)</legend>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="TitleDefense"> Title Defense</label>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="ProposalDefense"> Proposal Defense</label>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringValidation"> Validation of Instrument</label>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringPilotTesting"> Pilot Testing</label>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="DataGatheringTargetSamples"> Data Gathering to Target Samples</label>
+      <label class="checkbox-label"><input type="checkbox" name="researchStage" value="FinalDefense"> Final Defense</label>
 
-            <label for="remarks">Remarks:</label>
-            <textarea id="remarks" name="remarks"></textarea> <br><br>
-            <b>Assessed by:</b>
-        <input type="text">
+      <label for="remarks">Remarks:</label>
+      <textarea id="remarks" name="remarks"></textarea> <br><br>
+      <b>Assessed by:</b>
+      <input type="text" id="assessedBy" name="assessedBy" required>
 
-        <button onclick="showPopup()" >Submit Request</button>
+      <button type="submit">Submit Request</button>
 
-        <p>Back to <a href="index.html">home</a>.</p>
-        </fieldset>
-        <br><br><br>
-        
+      <p>Back to <a href="index.html">home</a>.</p>
+    </fieldset>
 
-        <div id="overlay">
-            <div id="popup" style="background-color: white;">
-              <span id="close-btn" onclick="closePopup()">Close</span>
-              <p><h5>You have requested a clearance. Please wait for further announcement. Thank you!</h5></p> <br>
-              <p>Go back to <a href="index.html">Home</a></p>
-            </div>  
-          </div>
-    </form>
+    <br><br><br>
+
+    <div id="overlay">
+      <div id="popup" style="background-color: white;">
+        <span id="close-btn" onclick="closePopup()">Close</span>
+        <p><h5>You have requested a clearance. Please wait for further announcement. Thank you!</h5></p> <br>
+        <p>Go back to <a href="index.html">Home</a></p>
+      </div>  
+    </div>
+  </form>
+
+  
               <!--Footer-->
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
@@ -163,10 +164,45 @@
     </div>
 
     <script>
-            function validateForm() {
-            
-            return true;
-        }
+           function validateForm() {
+      var date = document.getElementById('date').value;
+      var name = document.getElementById('name').value;
+      var course = document.getElementById('course').value;
+      var campus = document.getElementById('campus').value;
+      var semester = document.getElementById('semester').value;
+      var academicYear = document.getElementById('academicYear').value;
+      var thesisTitle = document.getElementById('thesisTitle').value;
+      var adviser = document.getElementById('adviser').value;
+      var consultedStatistician = document.getElementById('consultedStatistician').value;
+      var assessedBy = document.getElementById('assessedBy').value;
+
+      if (
+        date.trim() === "" ||
+        name.trim() === "" ||
+        course.trim() === "" ||
+        campus.trim() === "" ||
+        semester.trim() === "" ||
+        academicYear.trim() === "" ||
+        thesisTitle.trim() === "" ||
+        adviser.trim() === "" ||
+        consultedStatistician.trim() === "" ||
+        assessedBy.trim() === ""
+      ) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+
+      showPopup();
+      return false;
+    }
+
+    function showPopup() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+    }
         function showPopup() {
     document.getElementById('overlay').style.display = 'flex';
   }

@@ -119,48 +119,48 @@
     <!--Main-->
 
     <form action="#" method="post" onsubmit="return validateForm()">
-        <fieldset style="background-color: aliceblue;">
-            <Legend>
-                Consultation
-            </Legend>
-            Date:
-            <input type="date" name="date" id="date" required> <br> <br>
-            Name:
-            <input type="text" name="name" id="name" v>
-            Institution:
-            <input type="text" name="Institution" id="Institution" required>
-            <br/> <br>
-            Email Address:
-            <input type="email" name="email" id="email" required> <br>
-            Cellphone No.:
-            <input type="tel" id="cellphone" name="cellphone" pattern="[0-9]{10}" placeholder="Enter 11-digit number" required><br>
-            Dept/College:
-            <Select name="College" id="college" required>
-            <option value="One">College of Computing</option>
-            <option value="Two">College of Arts and Education</option>
-            <option value="Three">College of Engineering and Architecture</option>
-            </Select> <br><br>
-            Title of Research Project: <br>
-            <textarea name="" id="" cols="100" rows="5" placeholder="" required></textarea> <br><br>
-            For what purpose is this research? <br>
-            <textarea name="" id="" cols="100" rows="5" placeholder="" required></textarea> <br><br>
-            Objectives of Research: <br>
-            <textarea name="" id="" cols="100" rows="5" placeholder="" required></textarea> <br><br>
-            Methodological Sketch: <br>
-            <textarea name="" id="" cols="100" rows="5" placeholder="" required></textarea> <br><br>
-            What assistance do you expect? <br>
-            <textarea name="" id="" cols="100" rows="5" placeholder="" required></textarea> <br><br> <br>
-            Consultant Assigned:
-            <input type="text" name="name" id="name" required> 
-            Email address:
-            <input type="email" name="email" id="email" required> <br><br>
-            Conforme:
-            <textarea name="" id="" cols="50" rows="1" required></textarea> <br><br>
-            Noted by:
-            <input type="text" name="name" id="name" required> <br><br>
-            <button onclick="showPopup()" >Submit Request</button>
-            <p>Back to <a href="index.html">home</a>.</p>
-        </fieldset>
+      <fieldset style="background-color: aliceblue;">
+        <legend>
+          Consultation
+        </legend>
+        Date:
+        <input type="date" name="date" id="date" required> <br> <br>
+        Name:
+        <input type="text" name="name" id="name" required>
+        Institution:
+        <input type="text" name="Institution" id="Institution" required>
+        <br/> <br>
+        Email Address:
+        <input type="email" name="email" id="email" required> <br>
+        Cellphone No.:
+        <input type="tel" id="cellphone" name="cellphone" pattern="[0-9]{10}" placeholder="Enter 11-digit number" required><br>
+        Dept/College:
+        <select name="College" id="college" required>
+          <option value="One">College of Computing</option>
+          <option value="Two">College of Arts and Education</option>
+          <option value="Three">College of Engineering and Architecture</option>
+        </select> <br><br>
+        Title of Research Project: <br>
+        <textarea name="titleOfResearch" id="titleOfResearch" cols="100" rows="5" placeholder="" required></textarea> <br><br>
+        For what purpose is this research? <br>
+        <textarea name="researchPurpose" id="researchPurpose" cols="100" rows="5" placeholder="" required></textarea> <br><br>
+        Objectives of Research: <br>
+        <textarea name="researchObjectives" id="researchObjectives" cols="100" rows="5" placeholder="" required></textarea> <br><br>
+        Methodological Sketch: <br>
+        <textarea name="methodologicalSketch" id="methodologicalSketch" cols="100" rows="5" placeholder="" required></textarea> <br><br>
+        What assistance do you expect? <br>
+        <textarea name="expectedAssistance" id="expectedAssistance" cols="100" rows="5" placeholder="" required></textarea> <br><br> <br>
+        Consultant Assigned:
+        <input type="text" name="consultantName" id="consultantName" required> 
+        Email address:
+        <input type="email" name="consultantEmail" id="consultantEmail" required> <br><br>
+        Conforme:
+        <textarea name="conforme" id="conforme" cols="50" rows="1" required></textarea> <br><br>
+        Noted by:
+        <input type="text" name="notedBy" id="notedBy" required> <br><br>
+        <button type="submit">Submit Request</button>
+        <p>Back to <a href="index.html">home</a>.</p>
+      </fieldset>
     </form>
 
     <div id="overlay">
@@ -183,15 +183,54 @@
 
  <script>
         function validateForm() {
-            return true;
-        }
-        function showPopup() {
-    document.getElementById('overlay').style.display = 'flex';
-  }
+      var date = document.getElementById('date').value;
+      var name = document.getElementById('name').value;
+      var institution = document.getElementById('Institution').value;
+      var email = document.getElementById('email').value;
+      var cellphone = document.getElementById('cellphone').value;
+      var college = document.getElementById('college').value;
+      var titleOfResearch = document.getElementById('titleOfResearch').value;
+      var researchPurpose = document.getElementById('researchPurpose').value;
+      var researchObjectives = document.getElementById('researchObjectives').value;
+      var methodologicalSketch = document.getElementById('methodologicalSketch').value;
+      var expectedAssistance = document.getElementById('expectedAssistance').value;
+      var consultantName = document.getElementById('consultantName').value;
+      var consultantEmail = document.getElementById('consultantEmail').value;
+      var conforme = document.getElementById('conforme').value;
+      var notedBy = document.getElementById('notedBy').value;
 
-  function closePopup() {
-    document.getElementById('overlay').style.display = 'none';
-  }
+      if (
+        date.trim() === "" ||
+        name.trim() === "" ||
+        institution.trim() === "" ||
+        email.trim() === "" ||
+        cellphone.trim() === "" ||
+        college.trim() === "" ||
+        titleOfResearch.trim() === "" ||
+        researchPurpose.trim() === "" ||
+        researchObjectives.trim() === "" ||
+        methodologicalSketch.trim() === "" ||
+        expectedAssistance.trim() === "" ||
+        consultantName.trim() === "" ||
+        consultantEmail.trim() === "" ||
+        conforme.trim() === "" ||
+        notedBy.trim() === ""
+      ) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+
+      showPopup();
+      return false;
+    }
+
+    function showPopup() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+    }
     </script>
 </body>
 </html>
