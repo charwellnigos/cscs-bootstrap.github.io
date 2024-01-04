@@ -105,29 +105,7 @@
     </style>
 </head>
 <body>
-  <fieldset style="background-color: aliceblue;">
-            <div>
-                <div>
-                    <h3>REQUEST FOR CONSULTING SERVICES</h3>
-                </div>
-                <h4>Procedure:</h4>
-                <ol>
-                    <li>Accomplish two copies (2) of this form and submit at the Center for Statistics and 
-                        Computing Sciences Office</li>
-                    <li>Call Ms. Arlene N. Mendoza at 09484813973 to set your initial meeting with the 
-                        consultant.</li>  
-                    <li>Meet the consultant at the designated time and place. Bring the research 
-                        proposal, hard copy of the data, the cd file, copy of related studies, and other 
-                        materials  which may help the consultant in understanding the project.</li>  
-                    <li>If you fail to meet the consultant or if there are complaints/questions about the 
-                        service rendered, you may address it to the Head of Center for Statistics and 
-                        Computing Sciences, PSU Lingayen.</li>
-                </ol>
-        </fieldset>
-        
-    </header>
-
-
+  
     <form action="#" method="post" >
         <fieldset style="background-color: aliceblue;">
             <b>FINAL CLEARANCE</b><br> <br>
@@ -245,19 +223,61 @@
 </div> 
 
  <script>
-        function validateForm() {
-           
-            return true;
-        }
-        function showPopup() {
-    document.getElementById('overlay').style.display = 'flex';
+        <script>
+  function validateForm() {
+    // Get values of required fields
+    var name = document.getElementById('name').value;
+    var course = document.getElementById('course').value;
+    var campus = document.getElementById('campus').value;
+    var semester = document.getElementById('semester').value;
+    var academicYear = document.getElementById('academicYear').value;
+    var thesisTitle = document.getElementById('thesisTitle').value;
+    var adviser = document.getElementById('adviser').value;
+    var consultedStatistician = document.getElementById('consultedStatistician').value;
+
+    var dataEncoding = document.getElementById('dataEncoding').checked;
+    var dataAnalysis = document.getElementById('dataAnalysis').checked;
+    var descriptiveAnalysis = document.getElementById('descriptiveAnalysis').checked;
+    var basicInferentialAnalysis = document.getElementById('basicInferentialAnalysis').checked;
+    var higherInferentialAnalysis = document.getElementById('higherInferentialAnalysis').checked;
+    var outputChecking = document.getElementById('outputChecking').checked;
+
+    // Check if required fields are empty
+    if (
+      name.trim() === "" ||
+      course.trim() === "" ||
+      campus.trim() === "" ||
+      semester.trim() === "" ||
+      academicYear.trim() === "" ||
+      thesisTitle.trim() === "" ||
+      adviser.trim() === "" ||
+      consultedStatistician.trim() === "" ||
+      !(dataEncoding || dataAnalysis || descriptiveAnalysis || basicInferentialAnalysis || higherInferentialAnalysis || outputChecking)
+    ) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+
+    // If all checks pass, show the success popup
+    showPopup();
+
+    // Return false to prevent the form from submitting
+    return false;
+  }
+
+  function showPopup() {
+    // Your code to display the success popup goes here
+    document.getElementById('overlay').style.display = 'flex'; // Change 'block' to 'flex'
   }
 
   function closePopup() {
+    // Your code to close the popup goes here
     document.getElementById('overlay').style.display = 'none';
   }
+</script>
+
     </script>
-    </script>
+  
 
 
 

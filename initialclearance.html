@@ -1,258 +1,284 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Initial Clearance</title>
-        <link rel="shortcut icon" href="cscslogo.png" type="image/x-icon">
-        <style>
-            /* Add any additional styling as needed */
-            header{
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            body {
-                font-family: Arial, sans-serif;
-            }
-    
-            form {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-    
-            label {
-                display: block;
-                margin-bottom: 8px;
-            }
-    
-            textarea {
-                width: 100%;
-                height: 100px;
-            }
-    
-            input[type="text"],
-            input[type="number"],
-            input[type="date"] {
-                width: 100%;
-                padding: 8px;
-                margin-bottom: 15px;
-                box-sizing: border-box;
-            }
-    
-            fieldset {
-                border: 1px solid #ccc;
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            #overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+    <title>Initial Clearance</title>
+    <link rel="shortcut icon" href="cscslogo.png" type="image/x-icon">
+    <style>
+        /* Add any additional styling as needed */
+        header {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        #popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #close-btn {
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+        }
+        
+        #close-btn:active {
+            color: black;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .contact {
+            text-align: center;
+        }
+        
+        .contact img {
+            width: 24px;
+            height: 24px;
+            margin: 0 10px;
+        }
+        
+        .brand-text {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="return validateForm()">
+        <fieldset style="background-color: aliceblue;">
+            <b>INITIAL CLEARANCE</b><br><br>
+            Date: <input type="datetime" name="date" id="date">
 
-    #popup {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
+            <legend>A. DESCRIPTION</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-    #close-btn {
-      cursor: pointer;
-      font-size: 18px;
-      color: #555;
-    }
-    #close-btn:active {
-      color: black;
-    }
-   
-    button {
-      background-color: #3498db;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #2980b9;
-    }
-    .contact {
-      text-align: center;
-    }
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
 
-    .contact img {
-      width: 24px; 
-      height: 24px; 
-      margin: 0 10px;}
-       .brand-text {
-      font-size: 1.5rem; 
-    }
+            <label for="campus">Campus:</label>
+            <input type="text" id="campus" name="campus" required>
 
-        </style>
-    </head>
-    <body>
+            <label for="semester">Semester:</label>
+            <input type="text" id="semester" name="semester" required>
 
-      
-        <form action="#" method="post">
-            <fieldset style="background-color: aliceblue;">
-                <b>INITIAL CLEARANCE</b><br><br>
-                 Date: <input type="datetime" name="" id="">
+            <label for="academicYear">S.Y.:</label>
+            <input type="text" id="academicYear" name="academicYear" required>
 
-                <legend>A. DESCRIPTION</legend>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="course">Course:</label>
-                <input type="text" id="course" name="course" required>
-    
-                <label for="campus">Campus:</label>
-                <input type="text" id="campus" name="campus" required>
-    
-                <label for="semester">Semester:</label>
-                <input type="text" id="semester" name="semester" required>
-    
-                <label for="academicYear">S.Y.:</label>
-                <input type="text" id="academicYear" name="academicYear" required>
-    
-                <label for="thesisTitle">Title of Thesis/Dissertation:</label>
-                <textarea id="thesisTitle" name="thesisTitle" required></textarea>
-    
-                <label for="adviser">Adviser:</label>
-                <input type="text" id="adviser" name="adviser" required>
-    
-                <label for="consultedStatistician">Consulted Statistician from the Center:</label>
-                <input type="text" id="consultedStatistician" name="consultedStatistician" required>
-            </fieldset>
-    
-            <fieldset style="background-color: aliceblue;">
-                <legend>B. INITIAL CONSULTATION (to be filled out by the Center)</legend>
-                <!-- Include checkboxes for Presented Documents and textareas for Actions Taken by the Center -->
-                <b>Presented Documents:</b> <br>
-                <input type="checkbox" name="" value=""> Proposed/Approved Title <br>
-                <input type="checkbox" name="" id=""> Statement of the Problem/Objectives of the Study <br>
-                <input type="checkbox" name="" id=""> Statistical hypothesis <br>
-                <input type="checkbox" name="" id=""> Experimental set-up (design, replication, blocks, randomization) <br>
-                <input type="checkbox" name="" id=""> Sampling <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Sample Size <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Sampling technique <br>
-                <input type="checkbox" name="" id=""> Statistical plan/solution to the Problem <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Statistical tool(s) <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Level of Alpha <br>
-                <b>Actions Taken by the Center:</b> <br>
-                <input type="checkbox" name="" id=""> Statistical testable <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Hypothesis/hypotheses <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="" id=""> Problems <br>
-                <input type="checkbox" name="" id=""> Appropriate method for data collection <br>
-                <input type="checkbox" name="" id="">  Valid data gathering instrument (items in the instrument can solve the problem) <br>
-                <input type="checkbox" name="" id="">  Suitable experimental set – up (design, replication, blocks, randomization) <br>
-                <input type="checkbox" name="" id="">  Appropriate sampling procedure/setup <br>
-                <input type="checkbox" name="" id=""> □ Appropriate statistical tool <br>
-                <b>Remarks:</b>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+            <label for="thesisTitle">Title of Thesis/Dissertation:</label>
+            <textarea id="thesisTitle" name="thesisTitle" required></textarea>
 
-            </fieldset>
-    
-            <fieldset style="background-color: aliceblue;">
-                <legend>C. ASSESSMENT / PAYMENT</legend>
-                <label for="initialConsultationFee">I. Initial Consultation:</label>
-                <input type="number" id="initialConsultationFee" name="initialConsultationFee" required>
-                
-                <label for="officialReceiptNo">Official Receipt No.:</label>
-                <input type="text" id="officialReceiptNo" name="officialReceiptNo" required>
-    
-                <label for="additionalCharge">II. Additional charge:</label>
-                <input type="number" id="additionalCharge" name="additionalCharge">
-    
-                <label for="paymentDate">Date:</label>
-                <input type="date" id="paymentDate" name="paymentDate">
-    
-                <label for="totalPayment">TOTAL:</label>
-                <input type="number" id="totalPayment" name="totalPayment" readonly>
-            </fieldset>
-    
-            <fieldset style="background-color: aliceblue;">
-                <legend>D. CLEARANCE</legend>
-                <p>To whom it may concern:</p>
-                <p>This is to certify that <input type="text"> has satisfactorily accounted for all the fees and has completed the requirements set by the Center for the PROPOSAL STAGE.</p>
-    
-                <label for="statisticianSignature">Statistician Signature:</label>
-                <input type="text" id="statisticianSignature" name="statisticianSignature" required>
-    
-                <label for="centerHeadSignature">Center Head/Director Signature:</label>
-                <input type="text" id="centerHeadSignature" name="centerHeadSignature" required> <br><br>
-                <b>Assessed by:</b>
-                <input type="text">
-                    
-        <button onclick="showPopup()" >Submit Request</button>
-                    <p>Back to <a href="index.html">home</a>.</p>
-            </fieldset>
+            <label for="adviser">Adviser:</label>
+            <input type="text" id="adviser" name="adviser" required>
 
-        </form>
-        <div id="overlay">
-            <div id="popup" style="background-color: white;">
-              <span id="close-btn" onclick="closePopup()">Close</span>
-              <p><h5>You have requested a initial clearance. Please wait for further announcement. Thank you!</h5></p> <br>
-              <p>Go back to <a href="index.html">Home</a></p>
-            </div>  
-          </div>
-    
-             
- <!--Footer-->
-</div> <div class="container">
-  <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
-    <!-- Remove col-md-4 class -->
-    <div class="d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Pangasinan State University</span>
+            <label for="consultedStatistician">Consulted Statistician from the Center:</label>
+            <input type="text" id="consultedStatistician" name="consultedStatistician" required>
+        </fieldset>
+
+        <fieldset style="background-color: aliceblue;">
+            <legend>B. INITIAL CONSULTATION (to be filled out by the Center)</legend>
+            <!-- Include checkboxes for Presented Documents and textareas for Actions Taken by the Center -->
+            <b>Presented Documents:</b> <br>
+            <input type="checkbox" name="proposedTitleCheckbox" id="proposedTitleCheckbox"> Proposed/Approved Title <br>
+            <input type="checkbox" name="statementCheckbox" id="statementCheckbox"> Statement of the Problem/Objectives of the Study <br>
+            <input type="checkbox" name="hypothesisCheckbox" id="hypothesisCheckbox"> Statistical hypothesis <br>
+            <input type="checkbox" name="experimentalCheckbox" id="experimentalCheckbox"> Experimental set-up (design, replication, blocks, randomization) <br>
+            <input type="checkbox" name="samplingCheckbox" id="samplingCheckbox"> Sampling <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="sampleSizeCheckbox" id="sampleSizeCheckbox"> Sample Size <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="samplingTechniqueCheckbox" id="samplingTechniqueCheckbox"> Sampling technique <br>
+            <input type="checkbox" name="statisticalPlanCheckbox" id="statisticalPlanCheckbox"> Statistical plan/solution to the Problem <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="statisticalToolCheckbox" id="statisticalToolCheckbox"> Statistical tool(s) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="alphaLevelCheckbox" id="alphaLevelCheckbox"> Level of Alpha <br>
+            <b>Actions Taken by the Center:</b> <br>
+            <input type="checkbox" name="statisticalTestableCheckbox" id="statisticalTestableCheckbox"> Statistical testable <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="hypothesisTextareaCheckbox" id="hypothesisTextareaCheckbox"> Hypothesis/hypotheses <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="problemsTextareaCheckbox" id="problemsTextareaCheckbox"> Problems <br>
+            <input type="checkbox" name="dataCollectionCheckbox" id="dataCollectionCheckbox"> Appropriate method for data collection <br>
+            <input type="checkbox" name="validInstrumentCheckbox" id="validInstrumentCheckbox"> Valid data gathering instrument (items in the instrument can solve the problem) <br>
+            <input type="checkbox" name="experimentalSetupCheckbox" id="experimentalSetupCheckbox"> Suitable experimental set – up (design, replication, blocks, randomization) <br>
+            <input type="checkbox" name="samplingProcedureCheckbox" id="samplingProcedureCheckbox"> Appropriate sampling procedure/setup <br>
+            <input type="checkbox" name="statisticalToolCheckbox2" id="statisticalToolCheckbox2"> Appropriate statistical tool <br>
+            <b>Remarks:</b>
+            <textarea name="remarksTextarea" id="remarksTextarea" cols="30" rows="10"></textarea>
+        </fieldset>
+
+        <fieldset style="background-color: aliceblue;">
+            <legend>C. ASSESSMENT / PAYMENT</legend>
+            <label for="initialConsultationFee">I. Initial Consultation:</label>
+            <input type="number" id="initialConsultationFee" name="initialConsultationFee" required>
+
+            <label for="officialReceiptNo">Official Receipt No.:</label>
+            <input type="text" id="officialReceiptNo" name="officialReceiptNo" required>
+
+            <label for="additionalCharge">II. Additional charge:</label>
+            <input type="number" id="additionalCharge" name="additionalCharge">
+
+            <label for="paymentDate">Date:</label>
+            <input type="date" id="paymentDate" name="paymentDate">
+
+            <label for="totalPayment">TOTAL:</label>
+            <input type="number" id="totalPayment" name="totalPayment" readonly>
+        </fieldset>
+
+        <fieldset style="background-color: aliceblue;">
+            <legend>D. CLEARANCE</legend>
+            <p>To whom it may concern:</p>
+            <p>This is to certify that <input type="text" id="certificationName" name="certificationName"> has satisfactorily accounted for all the fees and has completed the requirements set by the Center for the PROPOSAL STAGE.</p>
+
+            <label for="statisticianSignature">Statistician Signature:</label>
+            <input type="text" id="statisticianSignature" name="statisticianSignature" required>
+
+            <label for="centerHeadSignature">Center Head/Director Signature:</label>
+            <input type="text" id="centerHeadSignature" name="centerHeadSignature" required> <br><br>
+            <b>Assessed by:</b>
+            <input type="text" id="assessedBy">
+            <button onclick="showPopup()">Submit Request</button>
+            <p>Back to <a href="index.html">home</a>.</p>
+        </fieldset>
+    </form>
+
+    <div id="overlay">
+        <div id="popup" style="background-color: white;">
+            <span id="close-btn" onclick="closePopup()">Close</span>
+            <p><h5>You have requested an initial clearance. Please wait for further announcement. Thank you!</h5></p> <br>
+            <p>Go back to <a href="index.html">Home</a></p>
+        </div>
     </div>
-    
-    <a id="contactus">
-      <div class="contact">
-        <a id="contactus"></a>
-        <a href="tel:+"><img src="call.png" alt="" class="call"></a>
-        <a href="mailto:charwellnigos3@gmail.com"><img src="email.png" alt="" class="email"></a>
-        <a href="https://www.linkedin.com/in/charwell-nigos-945503258/" target="_blank"><img src="linkedin.png" alt="" class="linkedin"></a>
-      </div>
-    </a>
-  </footer>
-</div> 
 
-     <script>
-            function validateForm() {
-                
-                return true;
-            }
-            function showPopup() {
-        document.getElementById('overlay').style.display = 'flex';
+    <!--Footer-->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+            <!-- Remove col-md-4 class -->
+            <div class="d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Pangasinan State University</span>
+            </div>
+
+            <a id="contactus">
+                <div class="contact">
+                    <a id="contactus"></a>
+                    <a href="tel:+"><img src="call.png" alt="" class="call"></a>
+                    <a href="mailto:charwellnigos3@gmail.com"><img src="email.png" alt="" class="email"></a>
+                    <a href="https://www.linkedin.com/in/charwell-nigos-945503258/" target="_blank"><img src="linkedin.png" alt="" class="linkedin"></a>
+                </div>
+            </a>
+        </footer>
+    </div>
+
+    <script>
+      function validateForm() {
+          var name = document.getElementById('name').value;
+          var course = document.getElementById('course').value;
+          var campus = document.getElementById('campus').value;
+          var semester = document.getElementById('semester').value;
+          var academicYear = document.getElementById('academicYear').value;
+          var thesisTitle = document.getElementById('thesisTitle').value;
+          var adviser = document.getElementById('adviser').value;
+          var consultedStatistician = document.getElementById('consultedStatistician').value;
+
+          var proposedTitleCheckbox = document.getElementById('proposedTitleCheckbox').checked;
+          var statementCheckbox = document.getElementById('statementCheckbox').checked;
+          var hypothesisCheckbox = document.getElementById('hypothesisCheckbox').checked;
+          // Add similar lines for other checkboxes
+
+          var hypothesisTextareaCheckbox = document.getElementById('hypothesisTextareaCheckbox').checked;
+          var problemsTextareaCheckbox = document.getElementById('problemsTextareaCheckbox').checked;
+          // Add similar lines for other textareas
+
+          if (
+              name.trim() === "" ||
+              course.trim() === "" ||
+              campus.trim() === "" ||
+              semester.trim() === "" ||
+              academicYear.trim() === "" ||
+              thesisTitle.trim() === "" ||
+              adviser.trim() === "" ||
+              consultedStatistician.trim() === "" ||
+              !(proposedTitleCheckbox || statementCheckbox || hypothesisCheckbox /* Add conditions for other checkboxes */ ) ||
+              !(hypothesisTextareaCheckbox || problemsTextareaCheckbox /* Add conditions for other textareas */ )
+          ) {
+              alert("Please fill in all required fields.");
+              return false;
+          }
+
+          // If all checks pass, show the success popup
+          showPopup();
+
+          // Return false to prevent the form from submitting
+          return false;
       }
-    
-      function closePopup() {
-        document.getElementById('overlay').style.display = 'none';
-      }
-        </script>
-    
+
+      // Your other JavaScript functions remain unchanged
   </script>
 
-
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

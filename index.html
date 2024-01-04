@@ -118,7 +118,16 @@
 .arrow-button {
   font-family: 'Arial', sans-serif;
 }
+.custom-button {
+  border-radius: 10px;
+      color: blue;
+      background-color: rgb(255, 253, 145);
+    }
 
+    .custom-button.clicked {
+      color: rgb(255, 255, 255);
+      background-color: blue;
+    }
 
 
 
@@ -134,7 +143,7 @@
       <div class="container">
         <a href="/" class="navbar-brand d-flex align-items-center link-body-emphasis text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#index.html"></use></svg>
-          <span class="fs-3 brand-text"><img src="cscs.png" alt="" height="73" width="233"> </span>
+          <span class="fs-3 brand-text"><img src="logo.png" alt="" height="73" width="73"> </span>
           <div class="container"></div>
         </a>
         
@@ -149,7 +158,9 @@
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#aboutus" class="nav-link">About Us</a></li>
             <li class="nav-item"><a href="#contactModal" class="nav-link" id="contactButton">Contact Us</a></li>
-            <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+            <ul class="nav">
+              <li class="nav-item"><a href="login.html" class="nav-link custom-button">Login</a></li>
+            </ul>
           </ul>
           
           <div id="contactModal" class="modal">
@@ -182,10 +193,9 @@
         </div>
       </div>
     </header>
-    <hr>
   </div>
 
-
+ <!--Hero-->
 <div class="container">
   <!--Carousel-->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -239,21 +249,8 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</div>
-  <!--Hero-->
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="stat.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="100" loading="lazy">
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" ><p style="color: #2b3cad; font-size: 650; ">Statistics analysis, because facts matter!</p></h1> <br>
-       
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#getStartedModal">
-              Get Started
-          </button>
-      </div>
+</div> <br><br>
+  
       
       <!-- Modal -->
       <div class="modal fade" id="getStartedModal" tabindex="-1" aria-labelledby="getStartedModalLabel" aria-hidden="true">
@@ -333,60 +330,55 @@
      
   <!--Services we offer-->
     
-          <div class="container px-4 py-5" style="background-color: #CDDAF4;">
-            <h2 class="pb-2 border-bottom">Services we offer:</h2>
-        
-            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-              <div class="col d-flex flex-column align-items-start gap-2">
-                <h2 class="fw-bold text-body-emphasis">1. Initial Consultation</h2>
-                <p class="text-body-secondary">This service includes checking of research problem, validation of data gathering instrument, and suggestion of statistical design, sampling procedure, and statistical tool.</p>
+      
+
+          
+          <div class="container">
+            <h1 class="text-center mb-4">Services we offer:</h1>
+            <div class="row justify-content-center">
+              <div class="col-lg-2">
+                <div class="card mb-5" style="background-color:#fff7b2;">
+                  <div class="card-body text-center">
+                    <img src="s1.png" alt="avatar" class="img-fluid" style="width: 150px;">
+                    <h5 class="my-3">1. Initial Consultation</h5>
+                  </div>
+                </div>
               </div>
-        
-              <div class="col">
-                <div class="row row-cols-1 row-cols-sm-2 g-4">
-                  <div class="col d-flex flex-column gap-2">
-                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                      <svg class="bi" width="1em" height="1em">
-                        <use xlink:href="#collection"></use>
-                      </svg>
-                    </div>
-                    <h4 class="fw-semibold mb-0 text-body-emphasis"> 2. Data Encoding and Cleaning</h4>
-                   
+              <div class="col-lg-2">
+                <div class="card mb-5" style="background-color:#fff7b2;">
+                  <div class="card-body text-center">
+                    <img src="s2.png" alt="avatar" class="img-fluid" style="width: 150px;">
+                    <h5 class="my-3">2. Data Encoding</h5>
                   </div>
-        
-                  <div class="col d-flex flex-column gap-2">
-                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                      <svg class="bi" width="1em" height="1em">
-                        <use xlink:href="#gear-fill"></use>
-                      </svg>
-                    </div>
-                    <h4 class="fw-semibold mb-0 text-body-emphasis">3. Data Analysis and Interpretation of Results</h4>
-                    
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="card mb-5" style="background-color:#fff7b2;">
+                  <div class="card-body text-center">
+                    <img src="s3.png" alt="avatar" class="img-fluid" style="width: 150px;">
+                    <h5 class="my-3">3. Data Analysis</h5>
                   </div>
-        
-                  <div class="col d-flex flex-column gap-2">
-                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                      <svg class="bi" width="1em" height="1em">
-                        <use xlink:href="#speedometer"></use>
-                      </svg>
-                    </div>
-                    <h4 class="fw-semibold mb-0 text-body-emphasis">4. Output Checking</h4>
-                  
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="card mb-5" style="background-color:#fff7b2;">
+                  <div class="card-body text-center">
+                    <img src="s4.png" alt="avatar" class="img-fluid" style="width: 150px;">
+                    <h5 class="my-3">4. Output Checking</h5>
                   </div>
-        
-                  <div class="col d-flex flex-column gap-2">
-                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                      <svg class="bi" width="1em" height="1em">
-                        <use xlink:href="#table"></use>
-                      </svg>
-                    </div>
-                    <h4 class="fw-semibold mb-0 text-body-emphasis">5. Conduct Seminar / Training/ Tutorials</h4>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="card mb-5" style="background-color:#fff7b2;">
+                  <div class="card-body text-center">
+                    <img src="s5.png" alt="avatar" class="img-fluid" style="width: 150px;">
+                    <h5 class="my-3">5. Conduct Seminar</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div> <br><br>
- 
+          
           <!--Process-->
           <div class="container">
             <div class="row align-items-start mt-5 mb-3 mt-xl-0 mb-xl-2">
@@ -410,6 +402,7 @@
           </div>
           
           </div> <br><br><br>
+
 
           <!--Statisticians-->
 
@@ -539,6 +532,12 @@ document.addEventListener("keydown", function(event) {
         closeModal();
     }
 });
+
+$(document).ready(function() {
+      $(".custom-button").click(function() {
+        $(this).toggleClass("clicked");
+      });
+    });
 
 </script>
 
